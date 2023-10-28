@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	<title>sberbank-russian-housing-market</title>
+</head>
+<body>
+	<form action="#" class="input_form" method="post">
+
+		<div class="mb-3">
+			<label class="form-label">full squre</label>
+			<input type="number" class="form-control" name="full_sq" >
+			<!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+		</div>
+
+
+		<div class="mb-3">
+			<label class="form-label">female fon</label>
+			<input type="number" class="form-control" name="female_f">
+		</div>
+		
+		<div class="mb-3">
+			<label class="form-label">build count monolith</label>
+			<input type="number" class="form-control" name="build_count_monolith">
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">cafe count 3000</label>
+			<input type="number" class="form-control" name="cafe_count_3000">
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">sport count 3000</label>
+			<input type="number" class="form-control" name="sport_count_3000">
+		</div>
+
+		<div class="mb-3 form-check">
+			<input type="checkbox" class="form-check-input" name="Culture_objects_top_25">
+			<label class="form-check-label">Culture objects top 25</label>
+		</div>
+
+		
+		<p class="d-inline-flex gap-1">
+			<button type="submit" class="btn btn-primary" value="submit">Отправить</button>
+			<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+			  Справка
+			</a>
+		</p>
+
+		<div class="collapse" id="collapseExample">
+			<div class="card card-body">
+				<ul>
+					<li><strong>full_sq</strong> общая площадь в квадратных метрах, включая лоджии, балконы и другие нежилые помещения.</li>
+					<li><strong>Culture_objects_top_25</strong> Наличие ключевых объектов культурного наследия (значимых объектов для уровня субъектов РФ, города)</li>
+					<li><strong>female_f</strong> Женское население</li>
+					<li><strong>build_count_monolith</strong> Доля монолитных зданий</li>
+					<li><strong>cafe_count_3000</strong> Количество кафе или ресторанов в зоне 1500 метров</li>
+					<li><strong>sport_count_3000</strong> Количество спортивных сооружений в 3000-метровой зоне</li>
+				</ul>
+			</div>
+		</div>
+
+	</form>
+	
+	<table class="table">
+		<thead>
+		  <tr>
+			{% for head in heads %}
+			<th scope="col">{{ head }}</th>
+			{% endfor%}
+		  </tr>
+		</thead>
+		<tbody>
+			{% for row in predicts %}
+			<tr>
+				{% for el in row %}
+				<th>{{ el }}</th>
+				{% endfor %}
+			  </tr>
+			{% endfor %}
+		</tbody>
+	  </table>
+
+
+	<style>
+		body{
+			margin: 0;
+			padding: 10%;
+			padding-top: 5%;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+		.input_form{
+			padding: 10px;
+			background-color: aliceblue;
+			border: 2px solid rgb(231, 238, 244);
+			border-radius: 7px;
+			margin-bottom: 30px;
+			width: 100%;
+		}
+	</style>
+</body>
+</html>
